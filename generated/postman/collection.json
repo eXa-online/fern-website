@@ -1,0 +1,407 @@
+{
+  "info": {
+    "name": "Fern Website",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "## Header\nThis API is a representation of a default website.\n"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "username",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "password",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{username}}",
+        "type": "string"
+      },
+      {
+        "key": "password",
+        "value": "{{password}}",
+        "type": "string"
+      }
+    ]
+  },
+  "item": [
+    {
+      "_type": "container",
+      "description": null,
+      "name": "Website",
+      "item": [
+        {
+          "_type": "container",
+          "description": null,
+          "name": "V 1",
+          "item": [
+            {
+              "_type": "container",
+              "description": null,
+              "name": "Article",
+              "item": [
+                {
+                  "_type": "endpoint",
+                  "name": "Get Articles",
+                  "request": {
+                    "description": "Retrieve all articles from the content store",
+                    "url": {
+                      "raw": "{{baseUrl}}/articles",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "articles"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [],
+                    "method": "GET",
+                    "auth": null,
+                    "body": null
+                  },
+                  "response": []
+                },
+                {
+                  "_type": "endpoint",
+                  "name": "Get Article",
+                  "request": {
+                    "description": "Retrieve an article from the content store based on its slug",
+                    "url": {
+                      "raw": "{{baseUrl}}/articles/:slug",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "articles",
+                        ":slug"
+                      ],
+                      "query": [],
+                      "variable": [
+                        {
+                          "key": "slug",
+                          "description": null,
+                          "value": "latest-developments-in-health-science"
+                        }
+                      ]
+                    },
+                    "header": [
+                      {
+                        "type": "text",
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "GET",
+                    "auth": null,
+                    "body": null
+                  },
+                  "response": [
+                    {
+                      "name": "Success",
+                      "status": "OK",
+                      "code": 200,
+                      "originalRequest": {
+                        "description": "Retrieve an article from the content store based on its slug",
+                        "url": {
+                          "raw": "{{baseUrl}}/articles/:slug",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "articles",
+                            ":slug"
+                          ],
+                          "query": [],
+                          "variable": [
+                            {
+                              "key": "slug",
+                              "description": null,
+                              "value": "latest-developments-in-health-science"
+                            }
+                          ]
+                        },
+                        "header": [
+                          {
+                            "type": "text",
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          }
+                        ],
+                        "method": "GET",
+                        "auth": null,
+                        "body": null
+                      },
+                      "description": null,
+                      "body": "{\n    \"slug\": \"latest-developments-in-health-science\",\n    \"title\": \"Latest Developments in Health Science\",\n    \"image\": \"https://img.freepik.com/free-photo/young-handsome-physician-medical-robe-with-stethoscope_1303-17818.jpg?w=2000&t=st=1686580083~exp=1686580683~hmac=1dda277654d12f9b6e1e06d73d3e0048b25fd0ab67d48e96cd55429b44574122\",\n    \"publicatione-date\": \"2023-06-12T16:20:12Z\",\n    \"richtext\": \"<main>\\n  <img src=\\\"https://img.freepik.com/free-photo/young-handsome-physician-medical-robe-with-stethoscope_1303-17818.jpg?w=2000&t=st=1686580083~exp=1686580683~hmac=1dda277654d12f9b6e1e06d73d3e0048b25fd0ab67d48e96cd55429b44574122\\\" alt=\\\"Health news\\\" style=\\\"width:100%; display:block; margin-top:20px;\\\">\\n  <section id=\\\"medical-advancements\\\">\\n      <h2>Medical Advancements</h2>\\n      <p>There have been numerous medical advancements in the past year, from innovative treatments for rare diseases to groundbreaking surgical procedures.</p>\\n      <p>One such advancement is the use of gene therapy in treating inherited retinal diseases. Researchers have successfully used a virus to deliver a healthy version of a faulty gene to the retina in patients with a rare form of blindness.</p>\\n      <p>Another exciting development is the use of virtual reality in surgical training. Surgeons can now practice complex procedures in a simulated environment, reducing the risk of errors in real surgeries.</p>\\n  </section>\\n  <section id=\\\"health-research\\\">\\n      <h2>Health Research</h2>\\n      <p>Health researchers are constantly working to improve our understanding of illness and disease. A recent study has shown that exercise may be just as effective as medication in treating heart disease and diabetes.</p>\\n      <p>Another study has found that eating a plant-based diet can significantly reduce the risk of developing certain types of cancer. This is encouraging news for those who are looking for ways to prevent cancer through lifestyle changes.</p>\\n  </section>\\n  <section id=\\\"health-tips\\\">\\n      <h2>Health Tips</h2>\\n      <p>There are many ways to improve your health and wellbeing, and small changes can often make a big difference. Here are a few health tips to get you started:</p>\\n      <ul>\\n          <li>Drink plenty of water to stay hydrated</li>\\n          <li>Eat a balanced diet with plenty of fruits and vegetables</li>\\n          <li>Get regular exercise, such as walking or jogging</li>\\n          <li>Take breaks from sitting and stretch throughout the day</li>\\n          <li>Practice good sleep hygiene to ensure a good night's sleep</li>\\n      </ul>\\n  </section>\\n</main>\\n\"\n}",
+                      "_postman_previewlanguage": "json"
+                    },
+                    {
+                      "name": "Article Does Not Exist Error",
+                      "status": "Article Does Not Exist Error",
+                      "code": 404,
+                      "originalRequest": {
+                        "description": "Retrieve an article from the content store based on its slug",
+                        "url": {
+                          "raw": "{{baseUrl}}/articles/:slug",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "articles",
+                            ":slug"
+                          ],
+                          "query": [],
+                          "variable": [
+                            {
+                              "key": "slug",
+                              "description": null,
+                              "value": "non-existent-article"
+                            }
+                          ]
+                        },
+                        "header": [
+                          {
+                            "type": "text",
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          }
+                        ],
+                        "method": "GET",
+                        "auth": null,
+                        "body": null
+                      },
+                      "description": null,
+                      "body": "\"non-existent-article\"",
+                      "_postman_previewlanguage": "json"
+                    }
+                  ]
+                },
+                {
+                  "_type": "endpoint",
+                  "name": "Create Article",
+                  "request": {
+                    "description": "Add a new article to the content store",
+                    "url": {
+                      "raw": "{{baseUrl}}/articles",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "articles"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [],
+                    "method": "POST",
+                    "auth": null,
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"slug\": \"latest-developments-in-health-science\",\n    \"title\": \"example\",\n    \"image\": \"example\",\n    \"publicatione-date\": \"1994-11-05T13:15:30Z\",\n    \"richtext\": \"example\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "response": []
+                }
+              ]
+            },
+            {
+              "_type": "container",
+              "description": null,
+              "name": "Blogpost",
+              "item": [
+                {
+                  "_type": "endpoint",
+                  "name": "Get Blogposts",
+                  "request": {
+                    "description": "Retrieve all blogposts from the content store",
+                    "url": {
+                      "raw": "{{baseUrl}}/blog",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "blog"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [],
+                    "method": "GET",
+                    "auth": null,
+                    "body": null
+                  },
+                  "response": []
+                },
+                {
+                  "_type": "endpoint",
+                  "name": "Get Blog Post",
+                  "request": {
+                    "description": "Retrieve a blog post from the content store based on its slug",
+                    "url": {
+                      "raw": "{{baseUrl}}/blog/:slug",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "blog",
+                        ":slug"
+                      ],
+                      "query": [],
+                      "variable": [
+                        {
+                          "key": "slug",
+                          "description": null,
+                          "value": "medical-advancements"
+                        }
+                      ]
+                    },
+                    "header": [
+                      {
+                        "type": "text",
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      }
+                    ],
+                    "method": "GET",
+                    "auth": null,
+                    "body": null
+                  },
+                  "response": [
+                    {
+                      "name": "Success",
+                      "status": "OK",
+                      "code": 200,
+                      "originalRequest": {
+                        "description": "Retrieve a blog post from the content store based on its slug",
+                        "url": {
+                          "raw": "{{baseUrl}}/blog/:slug",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "blog",
+                            ":slug"
+                          ],
+                          "query": [],
+                          "variable": [
+                            {
+                              "key": "slug",
+                              "description": null,
+                              "value": "medical-advancements"
+                            }
+                          ]
+                        },
+                        "header": [
+                          {
+                            "type": "text",
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          }
+                        ],
+                        "method": "GET",
+                        "auth": null,
+                        "body": null
+                      },
+                      "description": null,
+                      "body": "{\n    \"slug\": \"medical-advancements\",\n    \"title\": \"Medical Advancements\",\n    \"author\": \"Jennifer Lee\",\n    \"image\": \"https://img.freepik.com/free-vector/robot-as-doctor-robotized-surgery-with-patient_613284-2477.jpg?w=1380&t=st=1686581395~exp=1686581995~hmac=a9f2469a8d38110c39a0b268c9a01bdea3f709508319d5f2f03c8fea7c0544d4\",\n    \"publicatione-date\": \"2023-06-10T16:48:13\",\n    \"richtext\": \"<p>Technology has revolutionized the healthcare industry, leading to numerous medical advancements that have improved patient outcomes. Here are just a few examples:</p> <ul>\\n  <li>Robotic Surgery</li>\\n    <p>Robotic surgery allows for minimally invasive procedures that are less painful, have a faster recovery time, and reduce the risk of infection. Surgeons are able to perform precise, complex movements with a greater degree of control, leading to better surgical outcomes.</p>\\n  <li>Gene Editing</li>\\n    <p>Advancements in gene editing and CRISPR technology have opened up a world of possibilities for treating genetic disorders. This technology allows scientists to make precise changes to DNA, potentially eliminating the genetic mutations that cause diseases.</p>\\n  <li>Artificial Organs</li>\\n    <p>Scientists are working on developing artificial organs that can mimic the function of real ones. These organs could be used to replace damaged or failing organs in patients, potentially saving lives. For example, artificial kidneys could eliminate the need for dialysis in patients with kidney disease.</p>\\n  <li>Immunotherapy</li>\\n    <p>Immunotherapy is a form of cancer treatment that uses the body's immune system to fight cancer cells. This approach has shown promising results in clinical trials, and has already been used to successfully treat certain types of cancer.</p>\\n</ul>   <p>These are just a few of the many medical advancements made possible by technology. As technology continues to advance, we can expect even more breakthroughs in the years to come.</p>\\n\"\n}",
+                      "_postman_previewlanguage": "json"
+                    },
+                    {
+                      "name": "Blog Post Does Not Exist Error",
+                      "status": "Blog Post Does Not Exist Error",
+                      "code": 404,
+                      "originalRequest": {
+                        "description": "Retrieve a blog post from the content store based on its slug",
+                        "url": {
+                          "raw": "{{baseUrl}}/blog/:slug",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "blog",
+                            ":slug"
+                          ],
+                          "query": [],
+                          "variable": [
+                            {
+                              "key": "slug",
+                              "description": null,
+                              "value": "non-existent-blogpost"
+                            }
+                          ]
+                        },
+                        "header": [
+                          {
+                            "type": "text",
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          }
+                        ],
+                        "method": "GET",
+                        "auth": null,
+                        "body": null
+                      },
+                      "description": null,
+                      "body": "\"non-existent-blogpost\"",
+                      "_postman_previewlanguage": "json"
+                    }
+                  ]
+                },
+                {
+                  "_type": "endpoint",
+                  "name": "Create Blog Post",
+                  "request": {
+                    "description": "Add a new blogpost to the content store",
+                    "url": {
+                      "raw": "{{baseUrl}}/blog",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "blog"
+                      ],
+                      "query": [],
+                      "variable": []
+                    },
+                    "header": [],
+                    "method": "POST",
+                    "auth": null,
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"slug\": \"medical-advancements\",\n    \"title\": \"example\",\n    \"author\": \"example\",\n    \"image\": \"example\",\n    \"publicatione-date\": \"1994-11-05T13:15:30Z\",\n    \"richtext\": \"example\"\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    }
+                  },
+                  "response": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

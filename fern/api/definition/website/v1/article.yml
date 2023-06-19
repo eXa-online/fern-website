@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/fern-api/fern/main/fern.schema.json
+
+imports:
+  ArticleType: ../../fixtures/article.yml
+
+service:
+  auth: false
+  base-path: /articles
+  endpoints:
+    getArticles:
+      docs: Retrieve all articles from the content store
+      method: GET
+      path: ''
+      response: ArticleType.ArticleCollection
+
+    getArticle:
+      docs: Retrieve an article from the content store based on its slug
+      method: GET
+      path: /{slug}
+      path-parameters:
+        slug: ArticleType.ArticleSlug
+      response: ArticleType.Article
+      errors:
+        - ArticleDoesNotExistError
+      examples:
+        # Success response
+        - path-parameters:
+            slug: $ArticleType.ArticleSlug.Example1
+          response: 
+            body: $ArticleType.Article.Example1
+        # Error response
+        - path-parameters:
+            slug: non-existent-article
+          response:
+            error: ArticleDoesNotExistError
+            body: non-existent-article
+    
+    createArticle:
+      docs: Add a new article to the content store
+      method: POST
+      path: ''
+      request: ArticleType.CreatArticleRequest
+      response: ArticleType.ArticleSlug
+
+errors:
+  ArticleDoesNotExistError:
+    status-code: 404
+    type: ArticleType.ArticleSlug

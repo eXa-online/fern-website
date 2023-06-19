@@ -1,0 +1,345 @@
+openapi: 3.0.1
+info:
+  title: fern-website
+  version: ''
+  description: |
+    ## Header
+    This API is a representation of a default website.
+paths:
+  /articles:
+    get:
+      description: Retrieve all articles from the content store
+      operationId: website_v1_article_getArticles
+      tags:
+        - WebsiteV1Article
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/fixturesArticleCollection'
+        '400':
+          description: ''
+        '404':
+          description: ''
+    post:
+      description: Add a new article to the content store
+      operationId: website_v1_article_createArticle
+      tags:
+        - WebsiteV1Article
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/fixturesArticleSlug'
+        '400':
+          description: ''
+        '404':
+          description: ''
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/fixturesCreatArticleRequest'
+  /articles/{slug}:
+    get:
+      description: Retrieve an article from the content store based on its slug
+      operationId: website_v1_article_getArticle
+      tags:
+        - WebsiteV1Article
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            $ref: '#/components/schemas/fixturesArticleSlug'
+          examples:
+            Example1:
+              value: latest-developments-in-health-science
+            Example2:
+              value: non-existent-article
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/fixturesArticle'
+              examples:
+                Example1:
+                  value:
+                    slug: latest-developments-in-health-science
+                    title: Latest Developments in Health Science
+                    image: >-
+                      https://img.freepik.com/free-photo/young-handsome-physician-medical-robe-with-stethoscope_1303-17818.jpg?w=2000&t=st=1686580083~exp=1686580683~hmac=1dda277654d12f9b6e1e06d73d3e0048b25fd0ab67d48e96cd55429b44574122
+                    publicatione-date: '2023-06-12T16:20:12Z'
+                    richtext: |
+                      <main>
+                        <img src="https://img.freepik.com/free-photo/young-handsome-physician-medical-robe-with-stethoscope_1303-17818.jpg?w=2000&t=st=1686580083~exp=1686580683~hmac=1dda277654d12f9b6e1e06d73d3e0048b25fd0ab67d48e96cd55429b44574122" alt="Health news" style="width:100%; display:block; margin-top:20px;">
+                        <section id="medical-advancements">
+                            <h2>Medical Advancements</h2>
+                            <p>There have been numerous medical advancements in the past year, from innovative treatments for rare diseases to groundbreaking surgical procedures.</p>
+                            <p>One such advancement is the use of gene therapy in treating inherited retinal diseases. Researchers have successfully used a virus to deliver a healthy version of a faulty gene to the retina in patients with a rare form of blindness.</p>
+                            <p>Another exciting development is the use of virtual reality in surgical training. Surgeons can now practice complex procedures in a simulated environment, reducing the risk of errors in real surgeries.</p>
+                        </section>
+                        <section id="health-research">
+                            <h2>Health Research</h2>
+                            <p>Health researchers are constantly working to improve our understanding of illness and disease. A recent study has shown that exercise may be just as effective as medication in treating heart disease and diabetes.</p>
+                            <p>Another study has found that eating a plant-based diet can significantly reduce the risk of developing certain types of cancer. This is encouraging news for those who are looking for ways to prevent cancer through lifestyle changes.</p>
+                        </section>
+                        <section id="health-tips">
+                            <h2>Health Tips</h2>
+                            <p>There are many ways to improve your health and wellbeing, and small changes can often make a big difference. Here are a few health tips to get you started:</p>
+                            <ul>
+                                <li>Drink plenty of water to stay hydrated</li>
+                                <li>Eat a balanced diet with plenty of fruits and vegetables</li>
+                                <li>Get regular exercise, such as walking or jogging</li>
+                                <li>Take breaks from sitting and stretch throughout the day</li>
+                                <li>Practice good sleep hygiene to ensure a good night's sleep</li>
+                            </ul>
+                        </section>
+                      </main>
+        '400':
+          description: ''
+        '404':
+          description: ''
+  /blog:
+    get:
+      description: Retrieve all blogposts from the content store
+      operationId: website_v1_blogpost_getBlogposts
+      tags:
+        - WebsiteV1Blogpost
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/fixturesBlogPostCollection'
+        '400':
+          description: ''
+        '404':
+          description: ''
+    post:
+      description: Add a new blogpost to the content store
+      operationId: website_v1_blogpost_createBlogPost
+      tags:
+        - WebsiteV1Blogpost
+      parameters: []
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/fixturesBlogPostSlug'
+        '400':
+          description: ''
+        '404':
+          description: ''
+      security:
+        - BasicAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/fixturesCreateBlogPostRequest'
+  /blog/{slug}:
+    get:
+      description: Retrieve a blog post from the content store based on its slug
+      operationId: website_v1_blogpost_getBlogPost
+      tags:
+        - WebsiteV1Blogpost
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            $ref: '#/components/schemas/fixturesBlogPostSlug'
+          examples:
+            Example1:
+              value: medical-advancements
+            Example2:
+              value: non-existent-blogpost
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/fixturesBlogPost'
+              examples:
+                Example1:
+                  value:
+                    slug: medical-advancements
+                    title: Medical Advancements
+                    author: Jennifer Lee
+                    image: >-
+                      https://img.freepik.com/free-vector/robot-as-doctor-robotized-surgery-with-patient_613284-2477.jpg?w=1380&t=st=1686581395~exp=1686581995~hmac=a9f2469a8d38110c39a0b268c9a01bdea3f709508319d5f2f03c8fea7c0544d4
+                    publicatione-date: '2023-06-10T16:48:13'
+                    richtext: >
+                      <p>Technology has revolutionized the healthcare industry,
+                      leading to numerous medical advancements that have
+                      improved patient outcomes. Here are just a few
+                      examples:</p> <ul>
+                        <li>Robotic Surgery</li>
+                          <p>Robotic surgery allows for minimally invasive procedures that are less painful, have a faster recovery time, and reduce the risk of infection. Surgeons are able to perform precise, complex movements with a greater degree of control, leading to better surgical outcomes.</p>
+                        <li>Gene Editing</li>
+                          <p>Advancements in gene editing and CRISPR technology have opened up a world of possibilities for treating genetic disorders. This technology allows scientists to make precise changes to DNA, potentially eliminating the genetic mutations that cause diseases.</p>
+                        <li>Artificial Organs</li>
+                          <p>Scientists are working on developing artificial organs that can mimic the function of real ones. These organs could be used to replace damaged or failing organs in patients, potentially saving lives. For example, artificial kidneys could eliminate the need for dialysis in patients with kidney disease.</p>
+                        <li>Immunotherapy</li>
+                          <p>Immunotherapy is a form of cancer treatment that uses the body's immune system to fight cancer cells. This approach has shown promising results in clinical trials, and has already been used to successfully treat certain types of cancer.</p>
+                      </ul>   <p>These are just a few of the many medical
+                      advancements made possible by technology. As technology
+                      continues to advance, we can expect even more
+                      breakthroughs in the years to come.</p>
+        '400':
+          description: ''
+        '404':
+          description: ''
+components:
+  schemas:
+    fixturesArticleSlug:
+      title: fixturesArticleSlug
+      type: string
+      description: The unique identifier for an article in the database, SEO-relevant
+    fixturesArticle:
+      title: fixturesArticle
+      type: object
+      properties:
+        slug:
+          $ref: '#/components/schemas/fixturesArticleSlug'
+        title:
+          type: string
+          example: Latest Developments in Health Science
+        image:
+          type: string
+        publicatione-date:
+          type: string
+          format: date-time
+          example: '2023-06-12T16:20:12Z'
+        richtext:
+          type: string
+      required:
+        - slug
+        - title
+        - publicatione-date
+    fixturesArticleCollection:
+      title: fixturesArticleCollection
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/fixturesArticle'
+        total:
+          type: integer
+        offset:
+          type: integer
+        limit:
+          type: integer
+      required:
+        - items
+        - total
+        - offset
+        - limit
+    fixturesCreatArticleRequest:
+      title: fixturesCreatArticleRequest
+      type: object
+      properties:
+        slug:
+          $ref: '#/components/schemas/fixturesArticleSlug'
+        title:
+          type: string
+        image:
+          type: string
+        publicatione-date:
+          type: string
+          format: date-time
+        richtext:
+          type: string
+      required:
+        - slug
+        - title
+    fixturesBlogPostSlug:
+      title: fixturesBlogPostSlug
+      type: string
+      description: The unique identifier for a blog post in the database, SEO-relevant
+    fixturesBlogPost:
+      title: fixturesBlogPost
+      type: object
+      properties:
+        slug:
+          $ref: '#/components/schemas/fixturesBlogPostSlug'
+        author:
+          type: string
+          example: Jennifer Lee
+        title:
+          type: string
+          example: Medical Advancements
+        image:
+          type: string
+        publicatione-date:
+          type: string
+          format: date-time
+          example: '2023-06-10T16:48:13'
+        richtext:
+          type: string
+      required:
+        - slug
+        - author
+        - title
+        - publicatione-date
+    fixturesBlogPostCollection:
+      title: fixturesBlogPostCollection
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/fixturesBlogPost'
+        total:
+          type: integer
+        offset:
+          type: integer
+        limit:
+          type: integer
+      required:
+        - items
+        - total
+        - offset
+        - limit
+    fixturesCreateBlogPostRequest:
+      title: fixturesCreateBlogPostRequest
+      type: object
+      properties:
+        slug:
+          $ref: '#/components/schemas/fixturesBlogPostSlug'
+        title:
+          type: string
+        author:
+          type: string
+        image:
+          type: string
+        publicatione-date:
+          type: string
+          format: date-time
+        richtext:
+          type: string
+      required:
+        - slug
+        - title
+        - author
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic

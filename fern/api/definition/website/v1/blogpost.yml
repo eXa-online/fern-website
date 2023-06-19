@@ -1,0 +1,49 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/fern-api/fern/main/fern.schema.json
+
+imports:
+  BlogPostType: ../../fixtures/blogpost.yml
+
+service:
+  auth: false
+  base-path: /blog
+  endpoints:
+    getBlogposts:
+      docs: Retrieve all blogposts from the content store
+      method: GET
+      path: ''
+      response: BlogPostType.BlogPostCollection
+
+    getBlogPost:
+      docs: Retrieve a blog post from the content store based on its slug
+      method: GET
+      path: /{slug}
+      path-parameters:
+        slug: BlogPostType.BlogPostSlug
+      response: BlogPostType.BlogPost
+      errors:
+        - BlogPostDoesNotExistError
+      examples:
+        # Success response
+        - path-parameters:
+            slug: $BlogPostType.BlogPostSlug.Example1
+          response: 
+            body: $BlogPostType.BlogPost.Example1
+        # Error response
+        - path-parameters:
+            slug: non-existent-blogpost
+          response:
+            error: BlogPostDoesNotExistError
+            body: non-existent-blogpost
+    
+    createBlogPost:
+      docs: Add a new blogpost to the content store
+      method: POST
+      auth: true
+      path: ''
+      request: BlogPostType.CreateBlogPostRequest
+      response: BlogPostType.BlogPostSlug
+
+errors:
+  BlogPostDoesNotExistError:
+    status-code: 404
+    type: BlogPostType.BlogPostSlug

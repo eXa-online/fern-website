@@ -1,0 +1,53 @@
+types:
+  BlogPostSlug:
+    type: string
+    docs: The unique identifier for a blog post in the database, SEO-relevant
+    examples:
+      - name: Example1
+        value: medical-advancements
+  
+  BlogPost:
+    properties:
+      slug: BlogPostSlug
+      author: string
+      title: string
+      image: optional<string>
+      publicatione-date: datetime
+      richtext: optional<string>
+    examples:   
+      - name: Example1
+        value:
+            slug: $BlogPostSlug.Example1
+            title: Medical Advancements
+            author: Jennifer Lee
+            image: https://img.freepik.com/free-vector/robot-as-doctor-robotized-surgery-with-patient_613284-2477.jpg?w=1380&t=st=1686581395~exp=1686581995~hmac=a9f2469a8d38110c39a0b268c9a01bdea3f709508319d5f2f03c8fea7c0544d4
+            publicatione-date: 2023-06-10T16:48:13
+            richtext: > 
+              <p>Technology has revolutionized the healthcare industry, leading to numerous medical advancements that have improved patient outcomes. Here are just a few examples:</p>
+              <ul>
+                <li>Robotic Surgery</li>
+                  <p>Robotic surgery allows for minimally invasive procedures that are less painful, have a faster recovery time, and reduce the risk of infection. Surgeons are able to perform precise, complex movements with a greater degree of control, leading to better surgical outcomes.</p>
+                <li>Gene Editing</li>
+                  <p>Advancements in gene editing and CRISPR technology have opened up a world of possibilities for treating genetic disorders. This technology allows scientists to make precise changes to DNA, potentially eliminating the genetic mutations that cause diseases.</p>
+                <li>Artificial Organs</li>
+                  <p>Scientists are working on developing artificial organs that can mimic the function of real ones. These organs could be used to replace damaged or failing organs in patients, potentially saving lives. For example, artificial kidneys could eliminate the need for dialysis in patients with kidney disease.</p>
+                <li>Immunotherapy</li>
+                  <p>Immunotherapy is a form of cancer treatment that uses the body's immune system to fight cancer cells. This approach has shown promising results in clinical trials, and has already been used to successfully treat certain types of cancer.</p>
+              </ul>  
+              <p>These are just a few of the many medical advancements made possible by technology. As technology continues to advance, we can expect even more breakthroughs in the years to come.</p>
+  
+  BlogPostCollection:
+    properties:
+      items: list<BlogPost>
+      total: integer
+      offset: integer
+      limit: integer
+  
+  CreateBlogPostRequest:
+    properties: 
+      slug: BlogPostSlug
+      title: string
+      author: string
+      image: optional<string>
+      publicatione-date: optional<datetime>
+      richtext: optional<string>

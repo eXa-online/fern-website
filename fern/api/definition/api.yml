@@ -1,0 +1,12 @@
+name: fern-website
+auth: basic
+docs: |
+  ## Header
+  This API is a representation of a default website.
+error-discrimination:
+  strategy: status-code
+imports:
+  commons: commons.yml
+errors:
+  - commons.NotFoundError
+  - commons.BadRequestError

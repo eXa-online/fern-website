@@ -1,0 +1,5 @@
+errors:
+  NotFoundError:
+    status-code: 404
+  BadRequestError:
+    status-code: 400
