@@ -23,9 +23,9 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EXaOnlineGmbHFernWebsiteError = exports.register = exports.EXaOnlineGmbHFernWebsite = void 0;
-exports.EXaOnlineGmbHFernWebsite = __importStar(require("./api"));
+exports.ExaOnlineDeFernWebsiteError = exports.register = exports.ExaOnlineDeFernWebsite = void 0;
+exports.ExaOnlineDeFernWebsite = __importStar(require("./api"));
 var register_1 = require("./register");
 Object.defineProperty(exports, "register", { enumerable: true, get: function () { return register_1.register; } });
 var errors_1 = require("./errors");
-Object.defineProperty(exports, "EXaOnlineGmbHFernWebsiteError", { enumerable: true, get: function () { return errors_1.EXaOnlineGmbHFernWebsiteError; } });
+Object.defineProperty(exports, "ExaOnlineDeFernWebsiteError", { enumerable: true, get: function () { return errors_1.ExaOnlineDeFernWebsiteError; } });

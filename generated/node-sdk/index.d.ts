@@ -1,3 +1,3 @@
-export * as EXaOnlineGmbHFernWebsite from "./api";
-export { EXaOnlineGmbHFernWebsiteClient } from "./Client";
-export { EXaOnlineGmbHFernWebsiteError, EXaOnlineGmbHFernWebsiteTimeoutError } from "./errors";
+export * as ExaOnlineDeFernWebsite from "./api";
+export { ExaOnlineDeFernWebsiteClient } from "./Client";
+export { ExaOnlineDeFernWebsiteError, ExaOnlineDeFernWebsiteTimeoutError } from "./errors";

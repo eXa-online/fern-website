@@ -5,7 +5,7 @@ import typing
 from .resources.website.client import AsyncWebsiteClient, WebsiteClient
 
 
-class EXaOnlineGmbHFernWebsite:
+class ExaOnlineDeFernWebsite:
     def __init__(
         self, *, environment: str, username: typing.Optional[str] = None, password: typing.Optional[str] = None
     ):
@@ -15,7 +15,7 @@ class EXaOnlineGmbHFernWebsite:
         self.website = WebsiteClient(environment=self._environment, username=self._username, password=self._password)
 
 
-class AsyncEXaOnlineGmbHFernWebsite:
+class AsyncExaOnlineDeFernWebsite:
     def __init__(
         self, *, environment: str, username: typing.Optional[str] = None, password: typing.Optional[str] = None
     ):

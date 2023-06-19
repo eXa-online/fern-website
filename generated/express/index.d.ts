@@ -1,3 +1,3 @@
-export * as EXaOnlineGmbHFernWebsite from "./api";
+export * as ExaOnlineDeFernWebsite from "./api";
 export { register } from "./register";
-export { EXaOnlineGmbHFernWebsiteError } from "./errors";
+export { ExaOnlineDeFernWebsiteError } from "./errors";

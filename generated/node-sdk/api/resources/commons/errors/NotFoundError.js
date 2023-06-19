@@ -28,7 +28,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NotFoundError = void 0;
 const errors = __importStar(require("../../../../errors"));
-class NotFoundError extends errors.EXaOnlineGmbHFernWebsiteError {
+class NotFoundError extends errors.ExaOnlineDeFernWebsiteError {
     constructor() {
         super({
             message: "NotFoundError",

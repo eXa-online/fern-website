@@ -28,7 +28,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ArticleDoesNotExistError = void 0;
 const errors = __importStar(require("../../../../../../../../errors"));
-class ArticleDoesNotExistError extends errors.EXaOnlineGmbHFernWebsiteError {
+class ArticleDoesNotExistError extends errors.ExaOnlineDeFernWebsiteError {
     constructor(body) {
         super({
             message: "ArticleDoesNotExistError",

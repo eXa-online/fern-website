@@ -3,7 +3,7 @@
  */
 import * as errors from "../../../../../../../../errors";
 import express from "express";
-export declare class BlogPostDoesNotExistError extends errors.EXaOnlineGmbHFernWebsiteError {
+export declare class BlogPostDoesNotExistError extends errors.ExaOnlineDeFernWebsiteError {
     constructor();
     send(res: express.Response): void;
 }

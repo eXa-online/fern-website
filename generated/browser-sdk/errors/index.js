@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EXaOnlineGmbHFernWebsiteTimeoutError = exports.EXaOnlineGmbHFernWebsiteError = void 0;
-var EXaOnlineGmbHFernWebsiteError_1 = require("./EXaOnlineGmbHFernWebsiteError");
-Object.defineProperty(exports, "EXaOnlineGmbHFernWebsiteError", { enumerable: true, get: function () { return EXaOnlineGmbHFernWebsiteError_1.EXaOnlineGmbHFernWebsiteError; } });
-var EXaOnlineGmbHFernWebsiteTimeoutError_1 = require("./EXaOnlineGmbHFernWebsiteTimeoutError");
-Object.defineProperty(exports, "EXaOnlineGmbHFernWebsiteTimeoutError", { enumerable: true, get: function () { return EXaOnlineGmbHFernWebsiteTimeoutError_1.EXaOnlineGmbHFernWebsiteTimeoutError; } });
+exports.ExaOnlineDeFernWebsiteTimeoutError = exports.ExaOnlineDeFernWebsiteError = void 0;
+var ExaOnlineDeFernWebsiteError_1 = require("./ExaOnlineDeFernWebsiteError");
+Object.defineProperty(exports, "ExaOnlineDeFernWebsiteError", { enumerable: true, get: function () { return ExaOnlineDeFernWebsiteError_1.ExaOnlineDeFernWebsiteError; } });
+var ExaOnlineDeFernWebsiteTimeoutError_1 = require("./ExaOnlineDeFernWebsiteTimeoutError");
+Object.defineProperty(exports, "ExaOnlineDeFernWebsiteTimeoutError", { enumerable: true, get: function () { return ExaOnlineDeFernWebsiteTimeoutError_1.ExaOnlineDeFernWebsiteTimeoutError; } });

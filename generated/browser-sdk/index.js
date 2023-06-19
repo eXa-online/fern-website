@@ -23,10 +23,10 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EXaOnlineGmbHFernWebsiteTimeoutError = exports.EXaOnlineGmbHFernWebsiteError = exports.EXaOnlineGmbHFernWebsiteClient = exports.EXaOnlineGmbHFernWebsite = void 0;
-exports.EXaOnlineGmbHFernWebsite = __importStar(require("./api"));
+exports.ExaOnlineDeFernWebsiteTimeoutError = exports.ExaOnlineDeFernWebsiteError = exports.ExaOnlineDeFernWebsiteClient = exports.ExaOnlineDeFernWebsite = void 0;
+exports.ExaOnlineDeFernWebsite = __importStar(require("./api"));
 var Client_1 = require("./Client");
-Object.defineProperty(exports, "EXaOnlineGmbHFernWebsiteClient", { enumerable: true, get: function () { return Client_1.EXaOnlineGmbHFernWebsiteClient; } });
+Object.defineProperty(exports, "ExaOnlineDeFernWebsiteClient", { enumerable: true, get: function () { return Client_1.ExaOnlineDeFernWebsiteClient; } });
 var errors_1 = require("./errors");
-Object.defineProperty(exports, "EXaOnlineGmbHFernWebsiteError", { enumerable: true, get: function () { return errors_1.EXaOnlineGmbHFernWebsiteError; } });
-Object.defineProperty(exports, "EXaOnlineGmbHFernWebsiteTimeoutError", { enumerable: true, get: function () { return errors_1.EXaOnlineGmbHFernWebsiteTimeoutError; } });
+Object.defineProperty(exports, "ExaOnlineDeFernWebsiteError", { enumerable: true, get: function () { return errors_1.ExaOnlineDeFernWebsiteError; } });
+Object.defineProperty(exports, "ExaOnlineDeFernWebsiteTimeoutError", { enumerable: true, get: function () { return errors_1.ExaOnlineDeFernWebsiteTimeoutError; } });

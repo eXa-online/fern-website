@@ -1,1 +1,1 @@
-export { EXaOnlineGmbHFernWebsiteError } from "./EXaOnlineGmbHFernWebsiteError";
+export { ExaOnlineDeFernWebsiteError } from "./ExaOnlineDeFernWebsiteError";

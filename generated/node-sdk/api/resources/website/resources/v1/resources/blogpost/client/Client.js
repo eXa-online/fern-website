@@ -40,7 +40,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Blogpost = void 0;
 const core = __importStar(require("../../../../../../../../core"));
-const EXaOnlineGmbHFernWebsite = __importStar(require("../../../../../../.."));
+const ExaOnlineDeFernWebsite = __importStar(require("../../../../../../.."));
 const url_join_1 = __importDefault(require("url-join"));
 const serializers = __importStar(require("../../../../../../../../serialization"));
 const errors = __importStar(require("../../../../../../../../errors"));
@@ -50,8 +50,8 @@ class Blogpost {
     }
     /**
      * Retrieve all blogposts from the content store
-     * @throws {@link EXaOnlineGmbHFernWebsite.NotFoundError}
-     * @throws {@link EXaOnlineGmbHFernWebsite.BadRequestError}
+     * @throws {@link ExaOnlineDeFernWebsite.NotFoundError}
+     * @throws {@link ExaOnlineDeFernWebsite.BadRequestError}
      */
     getBlogposts() {
         return __awaiter(this, void 0, void 0, function* () {
@@ -76,11 +76,11 @@ class Blogpost {
             if (_response.error.reason === "status-code") {
                 switch (_response.error.statusCode) {
                     case 404:
-                        throw new EXaOnlineGmbHFernWebsite.NotFoundError();
+                        throw new ExaOnlineDeFernWebsite.NotFoundError();
                     case 400:
-                        throw new EXaOnlineGmbHFernWebsite.BadRequestError();
+                        throw new ExaOnlineDeFernWebsite.BadRequestError();
                     default:
-                        throw new errors.EXaOnlineGmbHFernWebsiteError({
+                        throw new errors.ExaOnlineDeFernWebsiteError({
                             statusCode: _response.error.statusCode,
                             body: _response.error.body,
                         });
@@ -88,14 +88,14 @@ class Blogpost {
             }
             switch (_response.error.reason) {
                 case "non-json":
-                    throw new errors.EXaOnlineGmbHFernWebsiteError({
+                    throw new errors.ExaOnlineDeFernWebsiteError({
                         statusCode: _response.error.statusCode,
                         body: _response.error.rawBody,
                     });
                 case "timeout":
-                    throw new errors.EXaOnlineGmbHFernWebsiteTimeoutError();
+                    throw new errors.ExaOnlineDeFernWebsiteTimeoutError();
                 case "unknown":
-                    throw new errors.EXaOnlineGmbHFernWebsiteError({
+                    throw new errors.ExaOnlineDeFernWebsiteError({
                         message: _response.error.errorMessage,
                     });
             }
@@ -103,9 +103,9 @@ class Blogpost {
     }
     /**
      * Retrieve a blog post from the content store based on its slug
-     * @throws {@link EXaOnlineGmbHFernWebsite.website.v1.BlogPostDoesNotExistError}
-     * @throws {@link EXaOnlineGmbHFernWebsite.NotFoundError}
-     * @throws {@link EXaOnlineGmbHFernWebsite.BadRequestError}
+     * @throws {@link ExaOnlineDeFernWebsite.website.v1.BlogPostDoesNotExistError}
+     * @throws {@link ExaOnlineDeFernWebsite.NotFoundError}
+     * @throws {@link ExaOnlineDeFernWebsite.BadRequestError}
      */
     getBlogPost(slug) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -130,18 +130,18 @@ class Blogpost {
             if (_response.error.reason === "status-code") {
                 switch (_response.error.statusCode) {
                     case 404:
-                        throw new EXaOnlineGmbHFernWebsite.website.v1.BlogPostDoesNotExistError(yield serializers.fixtures.BlogPostSlug.parseOrThrow(_response.error.body, {
+                        throw new ExaOnlineDeFernWebsite.website.v1.BlogPostDoesNotExistError(yield serializers.fixtures.BlogPostSlug.parseOrThrow(_response.error.body, {
                             unrecognizedObjectKeys: "passthrough",
                             allowUnrecognizedUnionMembers: true,
                             allowUnrecognizedEnumValues: true,
                             breadcrumbsPrefix: ["response"],
                         }));
                     case 404:
-                        throw new EXaOnlineGmbHFernWebsite.NotFoundError();
+                        throw new ExaOnlineDeFernWebsite.NotFoundError();
                     case 400:
-                        throw new EXaOnlineGmbHFernWebsite.BadRequestError();
+                        throw new ExaOnlineDeFernWebsite.BadRequestError();
                     default:
-                        throw new errors.EXaOnlineGmbHFernWebsiteError({
+                        throw new errors.ExaOnlineDeFernWebsiteError({
                             statusCode: _response.error.statusCode,
                             body: _response.error.body,
                         });
@@ -149,14 +149,14 @@ class Blogpost {
             }
             switch (_response.error.reason) {
                 case "non-json":
-                    throw new errors.EXaOnlineGmbHFernWebsiteError({
+                    throw new errors.ExaOnlineDeFernWebsiteError({
                         statusCode: _response.error.statusCode,
                         body: _response.error.rawBody,
                     });
                 case "timeout":
-                    throw new errors.EXaOnlineGmbHFernWebsiteTimeoutError();
+                    throw new errors.ExaOnlineDeFernWebsiteTimeoutError();
                 case "unknown":
-                    throw new errors.EXaOnlineGmbHFernWebsiteError({
+                    throw new errors.ExaOnlineDeFernWebsiteError({
                         message: _response.error.errorMessage,
                     });
             }
@@ -164,8 +164,8 @@ class Blogpost {
     }
     /**
      * Add a new blogpost to the content store
-     * @throws {@link EXaOnlineGmbHFernWebsite.NotFoundError}
-     * @throws {@link EXaOnlineGmbHFernWebsite.BadRequestError}
+     * @throws {@link ExaOnlineDeFernWebsite.NotFoundError}
+     * @throws {@link ExaOnlineDeFernWebsite.BadRequestError}
      */
     createBlogPost(request) {
         return __awaiter(this, void 0, void 0, function* () {
@@ -193,11 +193,11 @@ class Blogpost {
             if (_response.error.reason === "status-code") {
                 switch (_response.error.statusCode) {
                     case 404:
-                        throw new EXaOnlineGmbHFernWebsite.NotFoundError();
+                        throw new ExaOnlineDeFernWebsite.NotFoundError();
                     case 400:
-                        throw new EXaOnlineGmbHFernWebsite.BadRequestError();
+                        throw new ExaOnlineDeFernWebsite.BadRequestError();
                     default:
-                        throw new errors.EXaOnlineGmbHFernWebsiteError({
+                        throw new errors.ExaOnlineDeFernWebsiteError({
                             statusCode: _response.error.statusCode,
                             body: _response.error.body,
                         });
@@ -205,14 +205,14 @@ class Blogpost {
             }
             switch (_response.error.reason) {
                 case "non-json":
-                    throw new errors.EXaOnlineGmbHFernWebsiteError({
+                    throw new errors.ExaOnlineDeFernWebsiteError({
                         statusCode: _response.error.statusCode,
                         body: _response.error.rawBody,
                     });
                 case "timeout":
-                    throw new errors.EXaOnlineGmbHFernWebsiteTimeoutError();
+                    throw new errors.ExaOnlineDeFernWebsiteTimeoutError();
                 case "unknown":
-                    throw new errors.EXaOnlineGmbHFernWebsiteError({
+                    throw new errors.ExaOnlineDeFernWebsiteError({
                         message: _response.error.errorMessage,
                     });
             }

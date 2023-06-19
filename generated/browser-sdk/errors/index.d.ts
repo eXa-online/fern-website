@@ -1,2 +1,2 @@
-export { EXaOnlineGmbHFernWebsiteError } from "./EXaOnlineGmbHFernWebsiteError";
-export { EXaOnlineGmbHFernWebsiteTimeoutError } from "./EXaOnlineGmbHFernWebsiteTimeoutError";
+export { ExaOnlineDeFernWebsiteError } from "./ExaOnlineDeFernWebsiteError";
+export { ExaOnlineDeFernWebsiteTimeoutError } from "./ExaOnlineDeFernWebsiteTimeoutError";

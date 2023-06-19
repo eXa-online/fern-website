@@ -60,7 +60,7 @@ class ArticleService {
             }
             catch (error) {
                 console.error(error);
-                if (error instanceof errors.EXaOnlineGmbHFernWebsiteError) {
+                if (error instanceof errors.ExaOnlineDeFernWebsiteError) {
                     switch (error.constructor.name) {
                         case "NotFoundError":
                         case "BadRequestError":
@@ -93,7 +93,7 @@ class ArticleService {
             }
             catch (error) {
                 console.error(error);
-                if (error instanceof errors.EXaOnlineGmbHFernWebsiteError) {
+                if (error instanceof errors.ExaOnlineDeFernWebsiteError) {
                     switch (error.constructor.name) {
                         case "ArticleDoesNotExistError":
                         case "NotFoundError":
@@ -130,7 +130,7 @@ class ArticleService {
                 }
                 catch (error) {
                     console.error(error);
-                    if (error instanceof errors.EXaOnlineGmbHFernWebsiteError) {
+                    if (error instanceof errors.ExaOnlineDeFernWebsiteError) {
                         switch (error.constructor.name) {
                             case "NotFoundError":
                             case "BadRequestError":
